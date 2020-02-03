@@ -40,3 +40,6 @@ function indexOf(haystack,needle) {
 
 // Question:
 // You're given the string "12345.00", what method can you use to return "12345.0"?
+
+let str = "12345.00";
+str = str.slice(0, -1);
