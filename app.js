@@ -43,3 +43,57 @@ function indexOf(haystack,needle) {
 
 let str = "12345.00";
 str = str.slice(0, -1);
+
+
+
+// Question:
+// Get the sum of two arrays...actually the sum of all their elements. 
+// Each array includes only integer numbers. Output is a number too.
+const arr1 = [1,2,3]
+const arr2 = [4,5]
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+function addArrays(array, array2){
+  let total = array.reduce(reducer) 
+  let total1 = array2.reduce(reducer)
+  return total + total1
+}
+addArrays(arr1, arr2)
+
+
+
+
+
+// Question:
+// A web developer has an array of state names and an array of state abbreviations. 
+// They need an array of objects where each object contains the full state name 
+// and its corresponding abbreviation.
+// const example = [
+// {
+// name: "Alaska",
+// abbr: "AK"
+// }
+// ]
+// const abbr = [ 'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 
+// 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 
+// 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 
+// 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+// const states = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado',
+// 'Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii',
+// 'Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine',
+// 'Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri',
+// 'Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico',
+// 'New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon',
+// 'Pennsylvania','Rhode Island','South Carolina','South Dakota',
+// 'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia',
+// 'Wisconsin','Wyoming'
+// ];
+
+const makeStatesArray = () => {
+    const final = []
+    for (let i = 0; i < states.length; i++ ) {
+      final.push({ name: states[i], abbr: abbr[i] })
+    }
+    return final 
+  }
+  
+  makeStatesArray()
