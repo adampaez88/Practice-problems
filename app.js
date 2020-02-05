@@ -95,5 +95,25 @@ const makeStatesArray = () => {
     }
     return final 
   }
-  
   makeStatesArray()
+
+
+
+// Question:
+// Take a string and return a string that has all the original letters 
+// with the vowels removed.
+function disemvowel(string){
+    return string.replace(/[aeiou]/gi, '')
+}
+disemvowel('good evening')
+
+// OR ....  you could do it the long way like I did:
+
+function disemvowel(str) {
+  return str.split("").filter(letter=> isVowel(letter)).join("");
+}
+function isVowel(letter){
+  if (letter != "a" && letter != "e" &&letter != "o" && letter != "i" && letter != "u" && letter!="A" && letter!= "E"&& letter!= "I" && letter!= "O" && letter!= "U"){
+  return letter
+  }
+}
