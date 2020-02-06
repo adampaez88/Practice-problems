@@ -117,3 +117,31 @@ function isVowel(letter){
   return letter
   }
 }
+
+
+
+
+// Question:
+// Given an array of numbers (integers), return a string that provides the range 
+// of the numbers in the array, in the format of "min-max". 
+// For example, [4, 2, 98, 33, 17] should return "2-98". If passed an empty array,
+//  the function should return "undefined".
+
+let nums = [1,2,3,9]
+function rangeFinder(array) {
+  return array.length === 0 ? "undefined" 
+  : `${Math.min(...array)}-${Math.max(...array)}`
+}
+rangeFinder(nums)
+
+
+
+
+
+
+// Question:
+// Implement a function which takes two parameters, 
+// both of which are arrays, and zip them together.
+// ie: The arguments are [1,2,3], and [4,5,6], 
+// and after zipping the two arrays, you return [1,4,2,5,3,6].
+
