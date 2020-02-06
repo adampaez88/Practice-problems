@@ -145,3 +145,73 @@ rangeFinder(nums)
 // ie: The arguments are [1,2,3], and [4,5,6], 
 // and after zipping the two arrays, you return [1,4,2,5,3,6].
 
+//answer
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+function zipArrays(array1, array2) {
+  let newArray = [];
+  for (let i = 0; i < array1.length; i++) {
+    newArray.push(array1[i], array2[i]);
+  }
+  return newArray
+}
+zipArrays(array1, array2)
+
+// alternate method
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+function zip(array1, array2){
+    var result=[];
+    array1.forEach(function(o,i){
+       result.push(o);
+       result.push(array2[i]);
+    });
+    return result
+}
+zip(array1, array2)
+
+
+
+
+
+
+//question 
+// join two arrays
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+function joinArrays(arr1, arr2){
+  let array3 = arr1.concat(arr2)
+  return array3
+}
+joinArrays(array1, array2)
+
+
+
+
+
+
+// Question:
+// Create a function that takes an integer as an argument 
+// and returns "Even" for even numbers or "Odd" for odd numbers.
+
+//answer
+let num = 5
+let otherNum = 28
+function isEven(n) {
+   return n % 2 == 0;
+}
+isEven()
+
+function isOdd(n) {
+   return Math.abs(n % 2) == 1;
+}
+isOdd()
+//alternate method
+function even_or_odd(number) {
+    if ((number % 2) === 0) {
+        return "Even"
+    } else {
+        return "Odd"
+   }
+}
+even_or_odd(4)
