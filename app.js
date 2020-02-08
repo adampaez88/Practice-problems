@@ -215,3 +215,43 @@ function even_or_odd(number) {
    }
 }
 even_or_odd(4)
+
+
+
+
+
+// Question:
+// Given a string of any length, write a function that returns the number of vowels
+//  in the string. The only vowels that count are a, e, i, o, and u.
+function vowelCounter(str){
+    var count = 0;
+    var splitUp = str.toLowerCase().split('');
+    splitUp.forEach(l => {
+      if (l === 'a' || l === 'e' || l === 'i' || l === 'o' || l === 'u'){
+        count += 1;
+      }
+    })
+    return count;
+  }
+
+  // alternate method
+  function countVowels(str) {
+    let count = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+      let letter = str.charAt(i);
+      count += isVowel(letter) ? 1 : 0;
+    }
+  
+    return count;
+  }
+  
+  let vowelReg = new RegExp(/[a,e,i,o,u]/i);
+  
+  function isVowel(s) {
+    return vowelReg.test(s);
+  }
+
+
+
+  
