@@ -254,4 +254,53 @@ function vowelCounter(str){
 
 
 
+// Question:
+// Write a function that accepts an array of 10 integers (between 0 and 9), 
+// that returns a string of those numbers in the form of a phone number. 
+// Example: createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) 
+// => returns "(123) 456-7890"
+function createPhoneNumber(arr) {
+    if (!Array.isArray(arr) || arr.length != 10) {
+      throw new Error("Invalid input");
+    }
   
+    let c1 = getChunkString(arr, 0, 3);
+    let c2 = getChunkString(arr, 3, 6);
+    let c3 = getChunkString(arr, 6);
+  
+    return `(${c1}) ${c2}-${c3}`;
+  }
+  
+  function getChunkString(arr, start, end) {
+    return arr.slice(start, end).join("");
+  }
+
+  //alternate method
+  function createPhoneNumber(numbers){
+    return( 
+        `(${numbers[0]}${numbers[1]}${numbers[2]}) 
+        ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}
+        ${numbers[7]}${numbers[8]}${numbers[9]}`
+    );
+  }
+  createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+
+
+
+
+// Question:
+// In this little assignment you are given a string of space separated numbers,
+// and have to return the highest and lowest number.
+// highAndLow("1 2 3 4 5"); // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+
+string = '1 5 9'
+function highAndLow(str){
+  let stringInt = str.split(' ')
+  return `${Math.min(...stringInt)}, ${Math.max(...stringInt)}`
+}
+highAndLow(string)
+
+
+
+
