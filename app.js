@@ -304,3 +304,17 @@ highAndLow(string)
 
 
 
+
+
+
+
+// Question:
+// Given a boolean value(true/false), write a function that returns a 'Yes' string for true 
+// and a 'No' string for false
+let boolean = false // should return no
+let boolean1 = true //should return yes
+function boolToWord( bool ){
+    let result = bool ? "Yes" : "No"; 
+    return result;
+}
+boolToWord(boolean)
