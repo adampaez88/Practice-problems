@@ -1,10 +1,104 @@
+// Question #1
+// Get the sum of two arrays...actually the sum of all their elements. 
+// Each array includes only integer numbers. Output is a number too.
+const arr1 = [1,2,3]
+const arr2 = [4,5]
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+function addArrays(array, array2){
+  let total = array.reduce(reducer) 
+  let total1 = array2.reduce(reducer)
+  return total + total1
+}
+addArrays(arr1, arr2)
+
+
+
+
+
+
+//Question #2
+// Write a function that takes three arguments, sums all three and returns the result
+let number1 = 1
+let number2 = 2
+let number3 = 3
+function sumThreeNum (num1, num2, num3) {
+    return num1 + num2 + num3
+ }
+ sumThreeNum(number1, number2, number3)
+
+
+
+
+
+
+// Question #3
+// Write a function that takes a string and returns the uppercase version 
+// of that string with an ! at the end.
+
+
+
+
+
+
+
+
+// Question #4
+// Create a function that takes an integer as an argument 
+// and returns "Even" for even numbers or "Odd" for odd numbers.
+let num = 5
+let otherNum = 28
+function isEven(n) {
+   return n % 2 == 0;
+}
+isEven()
+
+function isOdd(n) {
+   return Math.abs(n % 2) == 1;
+}
+isOdd()
+//alternate method
+function even_or_odd(number) {
+    if ((number % 2) === 0) {
+        return "Even"
+    } else {
+        return "Odd"
+   }
+}
+even_or_odd(4)
+
+
+
+
+
+
+
+//Question #5
+// Your task is to make a function that can take any non-negative integer as a argument and return it with its 
+// digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+
+
+
+
+
+
+
+// Question #6
+// Given two integers, write a function that swaps them without using any temporary variables.
+
+
+
+
+
+
+
+
+// Question #7
 // Define a repeatify function on the String object. The function accepts an
 //  integer that specifies how many times the string has to be repeated. The 
 // function returns the string repeated the number of times specified. 
 // For example: console.log('hello'.repeatify(3));
 // Should print hellohellohello.
-
-// answer
 String.prototype.repeatify = String.prototype.repeatify || function(times) {
     let str = '';
  
@@ -17,6 +111,238 @@ String.prototype.repeatify = String.prototype.repeatify || function(times) {
  console.log('hello'.repeatify(3));
 
 
+
+
+
+// Question #8
+// What will be the output when the following code is executed? Explain.
+// console.log(false == '0')
+// console.log(false === '0')
+
+
+
+
+
+
+// Question #9
+// Write a function that will return the count of distinct case-insensitive alphabetic
+// characters and numeric digits that occur more than once in the input string. The input 
+// string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+
+
+
+
+
+
+// Question #10
+// Take a string and return a string that has all the original letters 
+// with the vowels removed.
+function disemvowel(string){
+    return string.replace(/[aeiou]/gi, '')
+}
+disemvowel('good evening')
+
+// OR ....  you could do it the long way like I did:
+
+function disemvowel(str) {
+  return str.split("").filter(letter=> isVowel(letter)).join("");
+}
+function isVowel(letter){
+  if (letter != "a" && letter != "e" &&letter != "o" && letter != "i" && letter != "u" && letter!="A" && letter!= "E"&& letter!= "I" && letter!= "O" && letter!= "U"){
+  return letter
+  }
+}
+
+
+
+
+// Question #11
+// Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,
+//  "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5.
+
+
+
+
+
+
+// Question #12
+// Given a boolean value(true/false), write a function that returns a 'Yes' string for true 
+// and a 'No' string for false
+let boolean = false // should return no
+let boolean1 = true //should return yes
+function boolToWord( bool ){
+    let result = bool ? "Yes" : "No"; 
+    return result;
+}
+boolToWord(boolean)
+
+
+
+
+
+
+
+
+// Question #13
+// Given an array of numbers (degrees fahrenheit) use .map to find their converted values
+// in degrees celsius. Hint: The conversion is: -32 * 5/9
+
+
+
+
+
+
+
+
+
+// Question #14
+// Write a function that accepts an array of 10 integers (between 0 and 9), 
+// that returns a string of those numbers in the form of a phone number. 
+// Example: createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) 
+// => returns "(123) 456-7890"
+function createPhoneNumber(arr) {
+    if (!Array.isArray(arr) || arr.length != 10) {
+      throw new Error("Invalid input");
+    }
+  
+    let c1 = getChunkString(arr, 0, 3);
+    let c2 = getChunkString(arr, 3, 6);
+    let c3 = getChunkString(arr, 6);
+  
+    return `(${c1}) ${c2}-${c3}`;
+  }
+  
+  function getChunkString(arr, start, end) {
+    return arr.slice(start, end).join("");
+  }
+
+  //alternate method
+  function createPhoneNumber(numbers){
+    return( 
+        `(${numbers[0]}${numbers[1]}${numbers[2]}) 
+        ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}
+        ${numbers[7]}${numbers[8]}${numbers[9]}`
+    );
+  }
+  createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+
+
+
+
+
+  
+  
+  
+  
+  
+  // Question #15
+  // Isogram is a word with no repeating letters, disregard case. Return true if the function 
+  // is passed an Isogram, false if the word has repeating letters.
+  
+  
+
+
+
+
+  
+  
+  //Question #16
+  // Write a function that takes 3 lengths and determines if these three lengths combined can make a 
+  // triangle. If the three sides can make a triangle, return true. If they cannot, return false.
+  // Optional Hint: The sum of the lengths of any two sides of a triangle is greater than the length
+  // of the third side. If you take the three sides of a triangle and add them in pairs, 
+  // the sum is greater than (not equal to) the third side. If that is not true, then it is not 
+  // possible to construct a triangle with the given side lengths.
+
+
+
+
+
+
+
+
+
+// Question #17
+// You're given the string "12345.00", what method can you use to return "12345.0"?
+let str = "12345.00";
+str = str.slice(0, -1);
+
+
+
+
+
+
+
+
+
+
+
+// Question #18
+// Writes a function that takes in an array of years, and returns an array of booleans stating 
+// whether or not a person born that year is of legal drinking age 
+// (you don't need to worry about being completely accurate in the case of the person turning 21 
+// this year, since you're only given years and not exact dates).
+
+
+
+
+
+
+
+
+
+
+
+// Question #19
+// Write a function that takes in a string and returns a new string of all letters alphabetized.
+
+
+
+
+
+
+
+
+
+
+// Question #20
+// Implement a function which takes two parameters, 
+// both of which are arrays, and zip them together.
+// ie: The arguments are [1,2,3], and [4,5,6], 
+// and after zipping the two arrays, you return [1,4,2,5,3,6].
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+function zipArrays(array1, array2) {
+  let newArray = [];
+  for (let i = 0; i < array1.length; i++) {
+    newArray.push(array1[i], array2[i]);
+  }
+  return newArray
+}
+zipArrays(array1, array2)
+
+// alternate method
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+function zip(array1, array2){
+    var result=[];
+    array1.forEach(function(o,i){
+       result.push(o);
+       result.push(array2[i]);
+    });
+    return result
+}
+zip(array1, array2)
+
+
+
+
+
+
+
+
+//Question #21
 // Implement the indexOf method for strings. The indexOf method takes a "haystack"
 // string, and a "needle" string to search for. So, indexOf("hello world", "or")
 //  would return 7.
@@ -38,32 +364,201 @@ function indexOf(haystack,needle) {
 
 
 
-// Question:
-// You're given the string "12345.00", what method can you use to return "12345.0"?
-
-let str = "12345.00";
-str = str.slice(0, -1);
 
 
 
-// Question:
-// Get the sum of two arrays...actually the sum of all their elements. 
-// Each array includes only integer numbers. Output is a number too.
-const arr1 = [1,2,3]
-const arr2 = [4,5]
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-function addArrays(array, array2){
-  let total = array.reduce(reducer) 
-  let total1 = array2.reduce(reducer)
-  return total + total1
+
+
+
+// Question #22
+// You've spent decades setting high scores on Donkey Kong but now, a challenger approaches. 
+// Write a function, scoreSettler, that will definitively show who is the King of Kong. 
+// scoreSettler will take a list of unsorted scores plus the highest possible score and return a 
+// sorted list of all of the scores, in descending order from high score to low score.
+
+
+
+
+
+
+
+
+// Question #23
+// Your code will show the Full name of the person who will pay for the wall and the 
+// truncated version(First 2 letters) of the name as an array. If the number of the 
+// characters in name is equal or less than two, it will return the name as is. 
+// Input: "James" Output: ["James", "Ja"]. If name is 2 chars or less. Input: "BJ" Output: ["BJ"]
+
+
+
+
+
+
+
+
+
+
+
+// Question #24
+// Given an array of numbers (integers), return a string that provides the range 
+// of the numbers in the array, in the format of "min-max". 
+// For example, [4, 2, 98, 33, 17] should return "2-98". If passed an empty array,
+//  the function should return "undefined".
+
+let nums = [1,2,3,9]
+function rangeFinder(array) {
+  return array.length === 0 ? "undefined" 
+  : `${Math.min(...array)}-${Math.max(...array)}`
 }
-addArrays(arr1, arr2)
+rangeFinder(nums)
 
 
 
 
 
-// Question:
+
+// Question #25
+// Write a JavaScript program to get the first n Fibonacci numbers.
+// Note: The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, . . . 
+// Each subsequent number is the sum of the previous two.
+
+
+
+
+
+
+
+
+
+
+// Question #26
+// Write a function that returns an array with all of the prime numbers up to 100.
+// Hint on exactly what prime numbers are: A prime number is a positive integer that has exactly 
+// two positive integer factors, 1 and itself. For example, if we list the factors of 28, 
+// we have 1, 2, 4, 7, 14, and 28. That's six factors. If we list the factors of 29, we only 
+// have 1 and 29. That's two factors. So we say that 29 is a prime number, but 28 isn't.
+
+
+
+
+
+
+
+
+
+
+
+// Question #27
+// Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" 
+// for the development and functioning of living organisms.
+// In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". You have function
+// with one side of the DNA (string, except for Haskell); you need to get the other complementary side. 
+// DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+// DNAStrand ("ATTGC") # return "TAACG"
+// DNAStrand ("GTAT") # return "CATA"
+
+
+
+
+
+
+
+// Question #28
+// In this little assignment you are given a string of space separated numbers,
+// and have to return the highest and lowest number.
+// highAndLow("1 2 3 4 5"); // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+string = '1 5 9'
+function highAndLow(str){
+  let stringInt = str.split(' ')
+  return `${Math.min(...stringInt)}, ${Math.max(...stringInt)}`
+}
+highAndLow(string)
+
+
+
+
+
+
+
+
+
+
+
+
+// Question #29
+// Given a string of any length, write a function that returns the number of vowels
+//  in the string. The only vowels that count are a, e, i, o, and u.
+function vowelCounter(str){
+    var count = 0;
+    var splitUp = str.toLowerCase().split('');
+    splitUp.forEach(l => {
+      if (l === 'a' || l === 'e' || l === 'i' || l === 'o' || l === 'u'){
+        count += 1;
+      }
+    })
+    return count;
+  }
+
+  // alternate method
+  function countVowels(str) {
+    let count = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+      let letter = str.charAt(i);
+      count += isVowel(letter) ? 1 : 0;
+    }
+  
+    return count;
+  }
+  
+  let vowelReg = new RegExp(/[a,e,i,o,u]/i);
+  
+  function isVowel(s) {
+    return vowelReg.test(s);
+  }
+
+
+
+
+
+
+
+
+
+
+// Question #30
+// Write a function that takes a string and returns a boolean indicating whether or not the string 
+// is a palindrome (is the same backwards as it is forwards). For example "hello" should return false 
+// and "tacocat" should return true.
+
+
+
+
+
+
+
+
+
+
+
+// Question #31
+// Retrieve all items from an array where ‘i < 30’ where values are stored as a string (i.e. “25%”).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Question #32
 // A web developer has an array of state names and an array of state abbreviations. 
 // They need an array of objects where each object contains the full state name 
 // and its corresponding abbreviation.
@@ -99,77 +594,96 @@ const makeStatesArray = () => {
 
 
 
-// Question:
-// Take a string and return a string that has all the original letters 
-// with the vowels removed.
-function disemvowel(string){
-    return string.replace(/[aeiou]/gi, '')
-}
-disemvowel('good evening')
-
-// OR ....  you could do it the long way like I did:
-
-function disemvowel(str) {
-  return str.split("").filter(letter=> isVowel(letter)).join("");
-}
-function isVowel(letter){
-  if (letter != "a" && letter != "e" &&letter != "o" && letter != "i" && letter != "u" && letter!="A" && letter!= "E"&& letter!= "I" && letter!= "O" && letter!= "U"){
-  return letter
-  }
-}
-
-
-
-
-// Question:
-// Given an array of numbers (integers), return a string that provides the range 
-// of the numbers in the array, in the format of "min-max". 
-// For example, [4, 2, 98, 33, 17] should return "2-98". If passed an empty array,
-//  the function should return "undefined".
-
-let nums = [1,2,3,9]
-function rangeFinder(array) {
-  return array.length === 0 ? "undefined" 
-  : `${Math.min(...array)}-${Math.max(...array)}`
-}
-rangeFinder(nums)
 
 
 
 
 
 
-// Question:
-// Implement a function which takes two parameters, 
-// both of which are arrays, and zip them together.
-// ie: The arguments are [1,2,3], and [4,5,6], 
-// and after zipping the two arrays, you return [1,4,2,5,3,6].
 
-//answer
-let array1 = [1,2,3]
-let array2 = [4,5,6]
-function zipArrays(array1, array2) {
-  let newArray = [];
-  for (let i = 0; i < array1.length; i++) {
-    newArray.push(array1[i], array2[i]);
-  }
-  return newArray
-}
-zipArrays(array1, array2)
+// Question #33
+// The Museum of Incredible Dull Things wants to get rid of some exhibitions. Miriam, the interior architect,
+// comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the 
+// one with the lowest rating. However, just as she finished rating all exhibitions, she's off to an 
+// important fair, so she asks you to write a program that tells her the ratings of the items after one 
+// removed the lowest one. Fair enough.
+// Your Task:
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If 
+// there are multiple elements with the same value, remove the one with a lower index. If you get an 
+// empty array/list, return an empty array/list.
+//   Don't change the order of the elements that are left.
+// Examples:
+// removeSmallest([1,2,3,4,5]) = [2,3,4,5]
+// removeSmallest([5,3,2,1,4]) = [5,3,2,4]
+// removeSmallest([2,2,1,2,1]) = [2,2,2,1]
 
-// alternate method
-let array1 = [1,2,3]
-let array2 = [4,5,6]
-function zip(array1, array2){
-    var result=[];
-    array1.forEach(function(o,i){
-       result.push(o);
-       result.push(array2[i]);
-    });
-    return result
-}
-zip(array1, array2)
 
+
+
+
+
+
+
+
+
+
+
+// Question #34
+// Return an array from a variable number of arguments (each an array) that includes only the unique 
+// values in the order in which they were presented as arguments.
+// EG.
+// const arr1 = [ 4 ];
+// const arr2 = [ 3, 4, 5 ]
+// const arr3 = [ 9, -1, 4 ]
+// union( arr1, arr2 ) // [ 4, 3, 5 ]
+// union( arr2, arr1 ) // [ 3, 4, 5 ]
+// union( arr1 ) // [ 4 ]
+// union( [ ] ) // [ ]
+// union( arr1, arr2, arr3) // [ 4, 3, 5, 9, -1 ]
+
+
+
+
+
+
+// Question #35
+// last(array, [n])
+// Returns the last element of an array. Passing n will return the last n elements of the array.
+// last( ['ant', 'bison', 'camel', 'duck', 'elephant'], 2) => ['duck', 'elephant']
+// last([5, 4, 3, 2, 1]) => [1]
+// last([], 2) => "n must be defined and be between 0 and array.length"
+// last([1,2,3,4], -4) => "n must be defined and be between 0 and array.length"
+
+
+
+
+
+
+
+
+
+
+
+
+// Question #36
+// Write a function called generateSequence that takes in two arguments ( length, startingNumber) and 
+// returns a new array where array.length === length and countians a sequence of beginning at startingNumber.
+// Eg.
+// generateSequence( 1, 10) => [ 10 ]
+// generateSequence( 5, 0 ) => [ 0, 1, 2, 3, 4 ]
+// generateSequence( 10, -5 ) => [ -5, -4, -3, -2, -1, 0, 1, 2, 3, 4 ]
+
+
+
+
+
+
+
+
+
+
+// Question #37
+// Given the array of the words ['red', 'green', 'blue'], return the number of occurrences of the letter 'e'.
 
 
 
@@ -185,136 +699,3 @@ function joinArrays(arr1, arr2){
 }
 joinArrays(array1, array2)
 
-
-
-
-
-
-// Question:
-// Create a function that takes an integer as an argument 
-// and returns "Even" for even numbers or "Odd" for odd numbers.
-
-//answer
-let num = 5
-let otherNum = 28
-function isEven(n) {
-   return n % 2 == 0;
-}
-isEven()
-
-function isOdd(n) {
-   return Math.abs(n % 2) == 1;
-}
-isOdd()
-//alternate method
-function even_or_odd(number) {
-    if ((number % 2) === 0) {
-        return "Even"
-    } else {
-        return "Odd"
-   }
-}
-even_or_odd(4)
-
-
-
-
-
-// Question:
-// Given a string of any length, write a function that returns the number of vowels
-//  in the string. The only vowels that count are a, e, i, o, and u.
-function vowelCounter(str){
-    var count = 0;
-    var splitUp = str.toLowerCase().split('');
-    splitUp.forEach(l => {
-      if (l === 'a' || l === 'e' || l === 'i' || l === 'o' || l === 'u'){
-        count += 1;
-      }
-    })
-    return count;
-  }
-
-  // alternate method
-  function countVowels(str) {
-    let count = 0;
-    
-    for (let i = 0; i < str.length; i++) {
-      let letter = str.charAt(i);
-      count += isVowel(letter) ? 1 : 0;
-    }
-  
-    return count;
-  }
-  
-  let vowelReg = new RegExp(/[a,e,i,o,u]/i);
-  
-  function isVowel(s) {
-    return vowelReg.test(s);
-  }
-
-
-
-// Question:
-// Write a function that accepts an array of 10 integers (between 0 and 9), 
-// that returns a string of those numbers in the form of a phone number. 
-// Example: createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) 
-// => returns "(123) 456-7890"
-function createPhoneNumber(arr) {
-    if (!Array.isArray(arr) || arr.length != 10) {
-      throw new Error("Invalid input");
-    }
-  
-    let c1 = getChunkString(arr, 0, 3);
-    let c2 = getChunkString(arr, 3, 6);
-    let c3 = getChunkString(arr, 6);
-  
-    return `(${c1}) ${c2}-${c3}`;
-  }
-  
-  function getChunkString(arr, start, end) {
-    return arr.slice(start, end).join("");
-  }
-
-  //alternate method
-  function createPhoneNumber(numbers){
-    return( 
-        `(${numbers[0]}${numbers[1]}${numbers[2]}) 
-        ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}
-        ${numbers[7]}${numbers[8]}${numbers[9]}`
-    );
-  }
-  createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
-
-
-
-
-// Question:
-// In this little assignment you are given a string of space separated numbers,
-// and have to return the highest and lowest number.
-// highAndLow("1 2 3 4 5"); // return "5 1"
-// highAndLow("1 2 -3 4 5"); // return "5 -3"
-
-string = '1 5 9'
-function highAndLow(str){
-  let stringInt = str.split(' ')
-  return `${Math.min(...stringInt)}, ${Math.max(...stringInt)}`
-}
-highAndLow(string)
-
-
-
-
-
-
-
-
-// Question:
-// Given a boolean value(true/false), write a function that returns a 'Yes' string for true 
-// and a 'No' string for false
-let boolean = false // should return no
-let boolean1 = true //should return yes
-function boolToWord( bool ){
-    let result = bool ? "Yes" : "No"; 
-    return result;
-}
-boolToWord(boolean)
