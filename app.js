@@ -18,7 +18,13 @@ addArrays(arr1, arr2)
 
 //Question #2
 // Write a function that takes three arguments, sums all three and returns the result
-
+let number1 = 1
+let number2 = 2
+let number3 = 3
+function sumThreeNum (num1, num2, num3) {
+    return num1 + num2 + num3
+ }
+ sumThreeNum(number1, number2, number3)
 
 
 
