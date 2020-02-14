@@ -79,7 +79,11 @@ even_or_odd(4)
 //Question #5
 // Your task is to make a function that can take any non-negative integer as a argument and return it with its 
 // digits in descending order. Essentially, rearrange the digits to create the highest possible number.
-
+let number = 13245768
+function order(num){
+  return parseInt(String(num).split("").sort((a, b) => {return b-a}).join(""));
+}
+order(number)
 
 
 
@@ -89,7 +93,21 @@ even_or_odd(4)
 
 // Question #6
 // Given two integers, write a function that swaps them without using any temporary variables.
+let x = 3
+let y = 4
+function swap(x,y) {
+    x = x + y;
+    y = x - y;
+    x = x - y;
+}
+swap(x, y)
 
+//alternate
+function swap(a,b) {
+  b = a.toString() + b.toString()
+  a = parseInt(b[1])
+  b = parseInt(b[0])
+}
 
 
 
@@ -122,6 +140,51 @@ String.prototype.repeatify = String.prototype.repeatify || function(times) {
 // What will be the output when the following code is executed? Explain.
 // console.log(false == '0')
 // console.log(false === '0')
+// The code will output:
+
+// true
+// false
+
+// In JavaScript, there are two sets of equality operators. The triple-equal operator === behaves like 
+// any traditional equality operator would: evaluates to true if the two expressions on 
+// either of its sides have the same type and the same value. 
+// The double-equal operator, however, tries to coerce the values before comparing them. 
+// It is therefore generally good practice to use the === rather than ==. The same holds true for !== vs !=.
+
+// Comparing something to a boolean using equality comparison operator for values that are of a different type.
+
+// false == ‘0’
+
+// In following the JavaScript spec…
+// - If Type(x) is Boolean, return the result of the comparison ToNumber(x) == y
+// - If Type (y) is Boolean, return the result of the comparison x == ToNumber(y)
+
+// So when evaluating false == ‘0’ using the ‘==‘ comparison operator where x = false and y = ‘0’. 
+// The spec dictates that since x is a Boolean we coerce this value to a number.
+
+// This leaves us with ToNumber(false) == ‘0’, which becomes 0 == ‘0’.
+
+// The values are still different types ‘number’ and ‘string’ respectively. Therefore we continue using the 
+// guidelines defined in the spec for comparing strings to numbers…
+// - If Type(x) is Number and Type(y) is String, return the result of the comparison x == ToNumber(y).
+// - If Type(x) is String and Type(y) is Number, return the result of the comparison ToNumber(x) == y.
+
+// This leaves us with 0 == ToNumber(‘0’), which becomes 0 == 0.
+
+// Since x and y are now of type ‘number’. A value comparison can be made to determine equality.
+
+// 0 == 0 becomes true.
+
+// For triple equal comparison…
+
+// false === ‘0’
+
+// Triple equals does not allow for coercion and since values of different types can 
+// not be strictly equal by definition the expression evaluates to false.
+
+
+
+
 
 
 
@@ -132,6 +195,40 @@ String.prototype.repeatify = String.prototype.repeatify || function(times) {
 // Write a function that will return the count of distinct case-insensitive alphabetic
 // characters and numeric digits that occur more than once in the input string. The input 
 // string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+let string = 'hello'
+function getDuplicates(string) {
+  var count = {};
+  string.split("").forEach(letter => {
+    count[letter] ? count[letter]++ : (count[letter] = 1);
+  });
+  return count;
+}
+
+// const getDuplicates = str => new Set(str)].size
+// **********************
+const alphaNumReg = new RegExp(/[a-zA-Z0-9]/);
+
+function filterAlphaNumeric(str) {
+  return str
+    .split("")
+    .filter((char) => alphaNumReg.test(char))
+    .join("");
+}
+
+function countDups(str) {
+	let alphaNum = filterAlphaNumeric(str);
+	let uniqueChars = new Set(...alphaNum.split(""));
+	return alphaNum.length - uniqueChars.size;
+}
+countDups(string)
+// 'A' --> 1
+// 'Aa' --> 1
+// 'AaB' --> 2
+// 'AaB4' --> 3
+// 'AaB4?' --> 3
+
+
 
 
 
@@ -164,6 +261,43 @@ function isVowel(letter){
 // Question #11
 // Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,
 //  "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5.
+function fizzbuzz(){
+    for(var i = 0; i <= 100; i++){
+      if (i % 3 === 0) {
+        console.log('fizz')
+      } else if (i % 5 === 0) {
+        console.log('buzz')
+      } else if (i % 3 === 0 && i % 5 === 0) {
+        console.log('fizzbuzz')
+      }
+    }
+  }
+  fizzbuzz()
+  
+  // leveraging closure
+  function divisibleBy(num) {
+    return (test) => test % num == 0;
+  }
+  
+  let divisibleByThree = divisibleBy(3);
+  let divisibleByFive = divisibleBy(5);
+  
+  function getFizzBuzz(num) {
+    result = "";
+    result += divisibleByThree(num) ? "fizz" : "";
+    result += divisibleByFive(num) ? "buzz" : "";
+    return result ||  num;
+  }
+  
+  function createFizzBuzz(arrayLength) {
+    return Array.from({length: arrayLength}, (v, i) => getFizzBuzz(i));
+  }
+  
+  createFizzBuzz(100);
+
+
+
+
 
 
 
@@ -188,9 +322,15 @@ boolToWord(boolean)
 
 
 
+
+
+
 // Question #13
 // Given an array of numbers (degrees fahrenheit) use .map to find their converted values
 // in degrees celsius. Hint: The conversion is: -32 * 5/9
+
+
+
 
 
 
