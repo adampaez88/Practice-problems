@@ -328,7 +328,17 @@ boolToWord(boolean)
 // Question #13
 // Given an array of numbers (degrees fahrenheit) use .map to find their converted values
 // in degrees celsius. Hint: The conversion is: -32 * 5/9
+let fahrenheit = [33, 46, 98, 134, 100]
+let celsius = fahrenheit.map(function(element) {
+  return Math.round((element-32)*5/9)
+})
+console.log(celsius)
 
+
+// ES6 Fat Arrow:
+let fahrenheit = [33, 46, 98, 134, 100]
+let celsius = fahrenheit.map(element => Math.round((element-32) * 5/9))
+console.log(celsius)
 
 
 
