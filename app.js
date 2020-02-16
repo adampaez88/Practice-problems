@@ -393,7 +393,32 @@ function createPhoneNumber(arr) {
   // Question #15
   // Isogram is a word with no repeating letters, disregard case. Return true if the function 
   // is passed an Isogram, false if the word has repeating letters.
-  
+
+  function isIsogram(str){
+    str = str.toLowerCase();
+    for(let i = 0; i<str.length ; i++){
+      for(let j = 0; j<str.length ; j++){
+        if(i === j){
+          continue;
+        }
+        else if(str[i] == str[j]){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+//   -------
+  function isIsogram(str){
+    for (var i = 0 ; i < str.length; i++)
+      for (var j = i + 1 ; j < str.length; j++)
+        if (str[i].toLowerCase() == str[j].toLowerCase())
+          return false;
+    
+    return true;
+  }
+
+
   
 
 
