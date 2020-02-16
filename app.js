@@ -433,7 +433,14 @@ function createPhoneNumber(arr) {
   // of the third side. If you take the three sides of a triangle and add them in pairs, 
   // the sum is greater than (not equal to) the third side. If that is not true, then it is not 
   // possible to construct a triangle with the given side lengths.
-
+  
+  function isTriangle(a, b, c){
+    if(a+b>c && b+c>a && a+c >b){
+          return true
+      }else{
+    return false
+      }
+    }
 
 
 
