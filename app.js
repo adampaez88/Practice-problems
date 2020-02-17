@@ -469,7 +469,40 @@ str = str.slice(0, -1);
 // whether or not a person born that year is of legal drinking age 
 // (you don't need to worry about being completely accurate in the case of the person turning 21 
 // this year, since you're only given years and not exact dates).
+let startYear = 2020
 
+function checkAge(num){
+  if (num <= startYear - 21){
+    return 'old enough'
+  } else {
+    return 'to young'
+  }
+}
+checkAge(2000)
+
+//alternate
+var years = [1965, 1979, 2007, 1997];
+var results = [];
+
+function getAges(yearsArray) {
+  for (var i = 0; i < yearsArray.length; i++) {
+    let age = 2018 - yearsArray[i];
+    if (age >= 21) {
+      results.push(true);
+    } else {
+      results.push(false);
+    }
+  }
+  return results;
+}
+console.log(getAges(years));
+
+// Mike Theodorou Solution:
+// Function will always get the current year
+const canDrink = (years) => {
+  const currentYear = (new Date()).getFullYear();
+  return years.map(year => currentYear - year >= 21 ? true : false);
+}
 
 
 
