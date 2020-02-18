@@ -469,18 +469,6 @@ str = str.slice(0, -1);
 // whether or not a person born that year is of legal drinking age 
 // (you don't need to worry about being completely accurate in the case of the person turning 21 
 // this year, since you're only given years and not exact dates).
-let startYear = 2020
-
-function checkAge(num){
-  if (num <= startYear - 21){
-    return 'old enough'
-  } else {
-    return 'to young'
-  }
-}
-checkAge(2000)
-
-//alternate
 var years = [1965, 1979, 2007, 1997];
 var results = [];
 
@@ -515,7 +503,11 @@ const canDrink = (years) => {
 
 // Question #19
 // Write a function that takes in a string and returns a new string of all letters alphabetized.
-
+function alphabetize(str){
+    let sortedString = str.split('').sort().join('')
+    return sortedString
+  }
+  alphabetize('zxywvutsrqponmlkjihgfedbca')
 
 
 
@@ -594,6 +586,11 @@ function indexOf(haystack,needle) {
 // Write a function, scoreSettler, that will definitively show who is the King of Kong. 
 // scoreSettler will take a list of unsorted scores plus the highest possible score and return a 
 // sorted list of all of the scores, in descending order from high score to low score.
+
+
+
+
+
 
 
 
