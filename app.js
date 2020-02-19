@@ -586,7 +586,25 @@ function indexOf(haystack,needle) {
 // Write a function, scoreSettler, that will definitively show who is the King of Kong. 
 // scoreSettler will take a list of unsorted scores plus the highest possible score and return a 
 // sorted list of all of the scores, in descending order from high score to low score.
-
+function bubbleSort(array) {
+    let done = false;
+    while (!done) {
+      done = true;
+      for (let i = 1; i < array.length; i += 1) {
+        if (array[i - 1] > array[i]) {
+          done = false;
+          let tmp = array[i - 1];
+          array[i - 1] = array[i];
+          array[i] = tmp;
+        }
+      }
+    }
+  
+    return array;
+  }
+  let numbers = [12, 10, 15, 11, 14, 13, 16];
+  bubbleSort(numbers);
+  console.log(numbers);
 
 
 
