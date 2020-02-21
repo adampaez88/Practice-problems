@@ -622,7 +622,19 @@ function bubbleSort(array) {
 // truncated version(First 2 letters) of the name as an array. If the number of the 
 // characters in name is equal or less than two, it will return the name as is. 
 // Input: "James" Output: ["James", "Ja"]. If name is 2 chars or less. Input: "BJ" Output: ["BJ"]
-
+function whoIsPaying(name){
+    var nameArr = [];
+    name.length <= 2 ? nameArr.push(name) : nameArr.push(name, name.slice(0,2));
+    return nameArr;
+    }
+    
+    function whoIsPaying(name) {
+      if (typeof name != 'string') {
+        throw new Error('Input must be string');
+      }
+      
+      return name.length > 2 ? [name, name.slice(0,2)] : [name];
+    }
 
 
 
