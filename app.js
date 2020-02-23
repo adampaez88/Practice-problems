@@ -700,7 +700,51 @@ let fibonacci_series = function (n)
 // two positive integer factors, 1 and itself. For example, if we list the factors of 28, 
 // we have 1, 2, 4, 7, 14, and 28. That's six factors. If we list the factors of 29, we only 
 // have 1 and 29. That's two factors. So we say that 29 is a prime number, but 28 isn't.
+function primeNums (n) {
+    let primeArray = [];
+    let tempArray = [];
+    for (let i=2; i<=n; i++) {
+         let tempArray = []
+   for (let x=2; x<=n; x++) {
+     if (x <= i) {
+       tempArray.push(i % x)
+       if (!tempArray.includes(0) && !primeArray.includes(i) || i === 2) {
+       primeArray.push(i)
+     }
+   } 
+ }
+ } return primeArray 
+}
 
+primeNums(100)
+
+
+- Mike Theodorou Solution
+
+const prime = (int) => {
+ const nums = [];
+ for(let i = 2; i < 101; i++) {
+   nums.push(i)
+ }
+ const isPrime = (num) => (num == 2 || num % 2 == 1) ? num : false;
+
+ return nums.filter(num => num == isPrime(num));
+}
+
+// Alex Emrie
+function getPrimeNumbers(n) {
+ const numArray = Array.from({length: n}, (v, i) => i + 1);
+ return numArray.filter(isPrime);
+}
+
+function isPrime(n) {
+ for (let i = 2; i <= Math.sqrt(n); i++) {
+   if (n % i == 0) {
+     return false;
+   }
+ }
+ return true;
+}
 
 
 
