@@ -891,7 +891,7 @@ function isPalindrome(input) {
 
 // Question #31
 // Retrieve all items from an array where ‘i < 30’ where values are stored as a string (i.e. “25%”).
-
+const percentages = (arr) => arr.map(item => `%${Math.floor((item * 100)/30)}`);
 
 
 
@@ -963,6 +963,9 @@ const makeStatesArray = () => {
 // removeSmallest([1,2,3,4,5]) = [2,3,4,5]
 // removeSmallest([5,3,2,1,4]) = [5,3,2,4]
 // removeSmallest([2,2,1,2,1]) = [2,2,2,1]
+
+
+
 
 
 
