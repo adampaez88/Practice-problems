@@ -719,8 +719,7 @@ function primeNums (n) {
 primeNums(100)
 
 
-- Mike Theodorou Solution
-
+// - Mike Theodorou Solution
 const prime = (int) => {
  const nums = [];
  for(let i = 2; i < 101; i++) {
@@ -763,6 +762,34 @@ function isPrime(n) {
 // DNA strand is never empty or there is no DNA at all (again, except for Haskell).
 // DNAStrand ("ATTGC") # return "TAACG"
 // DNAStrand ("GTAT") # return "CATA"
+function DNAStrand(strand) {
+    let complementary = [];
+  
+    for (let i = 0; i < strand.length; i++) {
+      let nucleotide = strand.charAt(i);
+      let compNucleotide = getComp(nucleotide);
+      complementary.push(compNucleotide);
+    }
+  
+    let compStrand = complementary.join("");
+    return compStrand;
+  }
+  
+  function getComp(nucleotide) {
+    let compMapping = {
+      'A': 'T',
+      'T': 'A',
+      'C': 'G',
+      'G': 'C'
+    }
+  
+    return compMapping[nucleotide];
+  }
+
+
+
+
+
 
 
 
@@ -838,7 +865,20 @@ function vowelCounter(str){
 // Write a function that takes a string and returns a boolean indicating whether or not the string 
 // is a palindrome (is the same backwards as it is forwards). For example "hello" should return false 
 // and "tacocat" should return true.
-
+function isPalindrome(input) {
+    return input.split("").reverse().join("") === input;
+  }
+  
+//   *********
+  function isPalindrome(str) {
+    let start = 0;
+    let end = str.length - 1;
+  
+    while (start < end) {
+      if (str[start++] != str[end--])  return false;
+    }
+    return true;
+  }
 
 
 
