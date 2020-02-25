@@ -963,7 +963,21 @@ const makeStatesArray = () => {
 // removeSmallest([1,2,3,4,5]) = [2,3,4,5]
 // removeSmallest([5,3,2,1,4]) = [5,3,2,4]
 // removeSmallest([2,2,1,2,1]) = [2,2,2,1]
-
+function removeSmallest(ratings) {
+    let smallest = Math.min(...ratings);
+    return removeFirstOccurrence(ratings, smallest);
+  }
+  
+  function removeFirstOccurrence(arr, val) {
+    let removed = false;
+    return arr.filter((elem) => {
+      if (!removed && val == elem) {
+        removed = true;
+      } else {
+        return elem;
+      }
+    })
+  }
 
 
 
