@@ -992,6 +992,8 @@ function removeSmallest(ratings) {
 
 
 
+
+
 // Question #34
 // Return an array from a variable number of arguments (each an array) that includes only the unique 
 // values in the order in which they were presented as arguments.
@@ -1004,6 +1006,24 @@ function removeSmallest(ratings) {
 // union( arr1 ) // [ 4 ]
 // union( [ ] ) // [ ]
 // union( arr1, arr2, arr3) // [ 4, 3, 5, 9, -1 ]
+// with reduce and long-form
+const union = (...args) => Array.from(new Set([...args].reduce((acc, val) => acc.concat(val), [])));
+
+// Using spread operator in all its glory
+const union = (...args) => [...new Set([].concat(...args))];
+
+function union(...arrays) {
+  let masterArray = [].concat(...arrays);
+  let masterSet = new Set(masterArray);
+  return [...masterSet];
+}
+
+
+
+
+
+
+
 
 
 
