@@ -1037,7 +1037,14 @@ function union(...arrays) {
 // last([5, 4, 3, 2, 1]) => [1]
 // last([], 2) => "n must be defined and be between 0 and array.length"
 // last([1,2,3,4], -4) => "n must be defined and be between 0 and array.length"
-
+const last = (array, n) => {
+  const l = array.length;
+  if (n > l || n < 0 || n === undefined) {
+   return  "n must be defined and be between 0 and array.length"
+  }
+  return array.slice(l - n)
+}
+last([1,2,3,4], -4)
 
 
 
