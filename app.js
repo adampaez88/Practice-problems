@@ -1064,6 +1064,13 @@ last([1,2,3,4], -4)
 // generateSequence( 5, 0 ) => [ 0, 1, 2, 3, 4 ]
 // generateSequence( 10, -5 ) => [ -5, -4, -3, -2, -1, 0, 1, 2, 3, 4 ]
 
+const generateSequence = (length, startingNumber) => Array.from(new Array(length), (value, index) => index + startingNumber)
+
+// -- OR --
+
+const generateSequence = ( l, sN ) => Array.from( new Array( l ), ( v, i ) => i + sN)
+
+
 
 
 
@@ -1075,6 +1082,18 @@ last([1,2,3,4], -4)
 
 // Question #37
 // Given the array of the words ['red', 'green', 'blue'], return the number of occurrences of the letter 'e'.
+
+const filter = (target, arr) => arr.join('').split('').filter(char => char === target).length;
+
+
+
+
+
+
+
+
+
+
 
 
 
