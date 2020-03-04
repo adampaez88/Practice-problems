@@ -471,3 +471,30 @@ for (let i = 0; i < 5; i++) {
   btn.addEventListener('click', function(){ console.log(i); });
   document.body.appendChild(btn);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Assuming d is an “empty” object in scope, say:
+var d = {};
+
+// …what is accomplished using the following code?
+[ 'zebra', 'horse' ].forEach(function(k) {
+	d[k] = undefined;
+});
+
+// The snippet of code shown above sets two properties on the object d. Ideally, any lookup performed 
+// on a JavaScript object with an unset key evaluates to undefined. But running this code marks 
+// those properties as “own properties” of the object.
+
+// This is a useful strategy for ensuring that an object has a given set of properties. 
+// Passing this object to Object.keys will return an array with those set keys as well 
+// (even if their values are undefined).
