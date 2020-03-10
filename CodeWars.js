@@ -74,3 +74,66 @@ function isValidWalk(walk) {
     
     return walk.length === 10 && north === south && east === west;
   }
+
+
+
+
+
+
+
+// Welcome. In this kata, you are asked to square every digit of a number.
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+// Note: The function accepts an integer and returns an integer
+// My solution
+function squareDigits(num){
+    //may the code be with you
+    let newNumber = num.toString().split('')
+    newNumber.forEach(function(element, index, array){
+      array[index] = element * element
+    })
+    return Number(newNumber.join(''))
+  }
+
+
+// alternate method 
+function squareDigits(num){
+    return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+}
+
+
+// alternate method
+function squareDigits(num){
+    var array = num.toString().split('').map( function(int) {
+      var i = parseInt(int);
+      return i * i;
+    });
+    return parseInt(array.join(""));
+}
+
+
+// alternate method with for loop
+function squareDigits(num){
+    var string = num.toString();
+    var results = [];
+    for (var i = 0; i < string.length; i++){
+        results[i] = string[i] * string[i];
+    }
+    return Number(results.join(''));
+};
+
+
+//alternate method
+function squareDigits(num){
+    return +num.toString().split('').map(i => i*i).join('');
+  }
+
+
+
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+// If anything in the text isn't a letter, ignore it and don't return it.
+// "a" = 1, "b" = 2, etc.
+// Example
+// alphabetPosition("The sunset sets at twelve o' clock.")
+// Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
+
