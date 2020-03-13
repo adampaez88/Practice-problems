@@ -214,4 +214,4 @@ function isIsogram(str){
 // alternate method
 function isIsogram(str){ 
     return !/(\w).*\1/i.test(str)
-}
+}s
