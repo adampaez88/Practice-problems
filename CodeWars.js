@@ -143,7 +143,75 @@ function alphabetPosition(text) {
       let code = text.toUpperCase().charCodeAt(i)
       if (code > 64 && code < 91) result += (code - 64) + " ";
     }
-  
     return result.slice(0, result.length - 1);
-  }
-  console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+
+//alternate solution
+function alphabetPosition(text) {
+    return text
+      .toUpperCase()
+      .match(/[a-z]/gi)
+      .map( (c) => c.charCodeAt() - 64)
+      .join(' ');
+}
+
+// alternate solution
+let alphabetPosition = (text) => text.toUpperCase().replace(/[^A-Z]/g, '').split('').map(ch => ch.charCodeAt(0) - 64).join(' ');
+
+
+// alternate solution
+function alphabetPosition(text) {
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+
+    return text.toLowerCase()
+        .split('')
+        .filter(t => letters.indexOf(t) > -1)
+        .map(t => letters.indexOf(t)+1 || '')
+        .join(' ');
+}
+
+
+
+
+
+
+
+
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+// Implement a function that determines whether a string that contains only letters is an 
+// isogram. Assume the empty string is an isogram. Ignore letter case.
+// isIsogram("Dermatoglyphics") == true
+// isIsogram("aba") == false
+// isIsogram("moOse") == false // -- ignore letter case
+
+// My Solution
+function isIsogram(str){
+    var i, j;
+    str = str.toLowerCase();
+    for(i = 0; i < str.length; ++i) {
+      for(j = i + 1; j < str.length; ++j) {
+        if(str[i] === str[j]) {
+          return false;
+        }
+      }
+    }
+    return true;
+ }
+
+ // alternate method
+ function isIsogram(str){
+    return !str.match(/([a-z]).*\1/i);
+}
+
+// alternate method
+function isIsogram(str){
+    return new Set(str.toUpperCase()).size == str.length;
+}
+
+// alternate method
+function isIsogram(str){ 
+    return !/(\w).*\1/i.test(str)
+}
