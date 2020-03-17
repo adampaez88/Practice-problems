@@ -1109,3 +1109,101 @@ function joinArrays(arr1, arr2){
 }
 joinArrays(array1, array2)
 
+
+
+
+
+
+
+
+// Given an array of integers, find the pair of adjacent elements that has the largest product and 
+// return that product.
+
+function adjacentElementsProduct(inputArray) {
+  var c = inputArray[0]*inputArray[1];
+  var p = c;
+  for(var i=1; i < inputArray.length; i++){
+      var c = inputArray[i] * inputArray[i+1];
+      if(c > p){
+          p=c;
+      };
+  };
+  return p;
+};
+
+
+
+
+
+// given a year return the centruy it is in. The 1st century is 1 - 100 and the 2nd 101 - 200 etc..
+function centuryFromYear(year){
+  let century = 0;
+  while (year > 0){
+    year -= 100;
+    century += 1;
+  }
+  return century;
+}
+
+
+
+
+
+
+
+
+// You are given a two-digit integer n. Return the sum of its digits.
+function addTwoDigits(n) {
+  var string = n.toString()
+  var sum = parseInt(string.charAt(0)) + parseInt(string.charAt(1))
+  return sum
+}
+
+
+
+
+
+
+// write a function that wraps presents and adds a bow 
+const gifts = ["teddy bear", "drone", "doll"];
+function wrapGifts(gifts) {
+  for (let i = 0; i < gifts.length; i++) {
+    console.log(`Wrapped ${gifts[i]} and added a bow!`);
+  }
+  return gifts;
+}
+
+
+
+
+
+// write a function that writes a thank you card
+function writeCards(array, eventName){ 
+  newArray = []
+    for (let i = 0; i < array.length; i++) {
+    newArray.push(`Thank you, ${array[i]}, for the wonderful ${eventName} gift!`)
+    }
+    return newArray
+  }
+  writeCards(['Lisa', 'Kaitlin', 'Jan'], 'surprise')
+
+
+
+
+
+
+
+
+// Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
+// A 1-interesting polygon is just a square with a side of length 1. An n-interesting polygon is obtained 
+// by taking the n - 1-interesting polygon and appending 1-interesting polygons to its rim, side by side. 
+// You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below.
+
+function shapeArea(n) {
+  return n * n + (n-1) * (n-1);
+}
+
+
+
+
+
