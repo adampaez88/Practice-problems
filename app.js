@@ -1207,3 +1207,99 @@ function shapeArea(n) {
 
 
 
+
+
+
+
+// Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue 
+// having an non-negative integer size. Since he likes to make things perfect, he wants to arrange 
+// them from smallest to largest so that each statue will be bigger than the previous one exactly 
+// by 1. He may need some additional statues to be able to accomplish that. Help him figure out the 
+// minimum number of additional statues needed.
+
+function makeArrayConsecutive2(statues) {
+  return Math.max(...statues) - Math.min(...statues) + 1 - statues.length
+}
+
+
+
+
+
+
+
+
+// Write a function that finds the duplicate in an array
+const arr = [1,2,4,5,6,4]
+function findDuplicates(data) {
+  let result = [];
+  data.forEach(function(element, index) {
+  // Find if there is a duplicate or not
+    if (data.indexOf(element, index + 1) > -1) {
+      
+      // Find if the element is already in the result array or not
+      if (result.indexOf(element) === -1) {
+        result.push(element);
+      }
+    }
+  });
+  return Number(result);
+}
+findDuplicates(arr)
+
+
+
+// write a function that finds the index of the duplicate in an array. 
+const arr = [1,2,4,5,6,4]
+function findDuplicates(data) {
+  let result = [];
+  data.forEach(function(element, index) {
+  // Find if there is a duplicate or not
+    if (data.indexOf(element, index + 1) > -1) {
+      
+      // Find if the element is already in the result array or not
+      if (result.indexOf(element) === -1) {
+        result.push(index);
+      }
+    }
+  });
+  return Number(result);
+}
+findDuplicates(arr)
+
+
+
+
+
+
+
+
+
+// Given a sequence of integers as an array, determine whether it is possible to obtain a strictly 
+// increasing sequence by removing no more than one element from the array.
+
+// Note: sequence a0, a1, ..., an is considered to be a strictly increasing if a0 < a1 < ... < an. 
+// Sequence containing only one element is also considered to be strictly increasing.
+
+function almostIncreasingSequence(sequence) {
+
+  var found = false;
+  for (var i=0;i<sequence.length;i++) {
+      if(sequence[i] <= sequence[i-1]) {
+          if(found) {
+            return false;
+          } else {
+            found = true;
+          }
+      if(i === 1 || i + 1 === sequence.length) {
+        continue;
+      }
+      else if (sequence[i] > sequence[i-2]) {
+        sequence[i-1] = sequence[i-2];
+      }
+      else if(sequence[i-1] >= sequence[i+1]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
