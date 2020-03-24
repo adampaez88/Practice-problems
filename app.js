@@ -1312,3 +1312,71 @@ function almostIncreasingSequence(sequence) {
 // You may need to think laterally!
 //Do console.log(blackBox.toString());
 JSopenSesame();
+
+
+
+
+
+
+// You are running the calculation 2 + 2 * 2 + 2 * 2 and expect to get the answer 32 but instead 
+// the function keeps returning 10. Fix the function to make it return 32 without changing the number 
+// or the operators.
+function orderOperations () {
+  return (2 + 2) * (2 + 2) * 2
+}
+
+
+
+
+
+
+// This series of katas will introduce you to basics of doing geometry with computers.
+// Point objects have x and y attributes (X and Y in C#) attributes.
+// Write a function calculating distance between Point a and Point b.
+// Tests round answers to 6 decimal places.
+function distanceBetweenPoints(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+
+
+
+
+
+// 1 < 2 < 3 === true, right? but can
+// 3 < 2 < 1 === true, too??
+// Here's your task: write a function greaterThanLessThan with three arguments (a,b,c) that returns a 
+// boolean (true or false), such that
+// a = 1
+// b = 2
+// c = 3
+// returns true, as does
+// a = 3
+// b = 2
+// c = 1
+function greaterThanLessThan (a,b,c) {
+  return a<b<c
+}
+
+//alternate solution
+const greaterThanLessThan = (a, b, c) => a < b < c;
+
+//alternate 
+function greaterThanLessThan (a,b,c) {
+  return a < b < c === true;
+}
+
+
+
+
+
+// A magician in the subway showed you a trick, he put an ice brick in a bottle to impress you. 
+// The bricks top and bottom are square with sides equal to the bottles diameter. 
+// The bricks fits snuggly up to the bottle neck/rim. Just for fun and also to impress the 
+// magician and people around, you decide to calculate the brick's volume. Write a function 
+// iceBrickVolume that accepts these parameters:
+// radius - bottle's radius (always > 0);
+// bottleLength - total bottle length (always > 0);
+// rimLength - length from bottle top to brick (always < bottleLength);
+// And return volume of ice brick that magician managed to put into a bottle.
+
