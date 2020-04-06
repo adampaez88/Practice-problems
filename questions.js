@@ -812,3 +812,18 @@ console.log(a[b]);
 // converted to "[object Object]". As a result, a[b] and a[c] are both equivalent to 
 // a["[object Object]"] and can be used interchangeably. Therefore, setting or referencing a[c] 
 // is precisely the same as setting or referencing a[b].
+
+
+
+
+
+
+// create a function that returns an array minus any duplicates
+let array1 = [1,2,3,'4',4, '4', 3 , 2]
+function unique(arr){
+  let uniqueArr = arr.filter((element, index, self) => {
+    return index === self.indexOf(element);
+  })
+  return uniqueArr;
+}
+unique(array1)
