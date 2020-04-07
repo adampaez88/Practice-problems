@@ -827,3 +827,57 @@ function unique(arr){
   return uniqueArr;
 }
 unique(array1)
+
+
+
+
+
+
+
+
+
+
+
+// 20. What does the following code do?
+let string = 'doggie'
+function dogToCat(str){
+  return str.split('dog').join('cat')
+}
+dogToCat(string)
+//Replaces every occurence of the word dog in a string with the word ‘cat’
+
+
+
+
+
+
+
+
+
+
+// 22. Fill in the missing code:
+
+get the cumulative sum of a list
+e.g cumulative_sum([1,2,3,4,5] => [1,3,6,10,15])
+array = [1,2,3,4,5]
+function cumulative_sum(arr){
+  let output = [];
+  for(let i = 0; i < arr.length; i++){
+    if (i === 0){
+      output.push(arr[i])
+    } else {
+//
+
+      output.push(arr[i] + output[i -1])
+
+//
+    }
+  }
+  return output;
+}
+cumulative_sum(array)
+
+
+
+
+
