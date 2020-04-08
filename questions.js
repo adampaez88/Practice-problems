@@ -856,9 +856,8 @@ dogToCat(string)
 
 
 // 22. Fill in the missing code:
-
-get the cumulative sum of a list
-e.g cumulative_sum([1,2,3,4,5] => [1,3,6,10,15])
+// get the cumulative sum of a list
+// e.g cumulative_sum([1,2,3,4,5] => [1,3,6,10,15])
 array = [1,2,3,4,5]
 function cumulative_sum(arr){
   let output = [];
@@ -881,3 +880,60 @@ cumulative_sum(array)
 
 
 
+
+
+// Codewars Bar recommends you drink 1 glass of water per standard drink so you're not hungover 
+// tomorrow morning.
+// Your fellow coders have bought you several drinks tonight in the form of a string. 
+// Return a string suggesting how many glasses of water you should drink to not be hungover.
+
+// Example parties:
+// Input 0:
+// "1 beer"
+
+// Output 0:
+// "1 glass of water"
+
+// Explaination 0:
+// You drank one standard drink
+
+// Input 1:
+// "1 shot, 5 beers, 2 shots, 1 glass of wine, 1 beer"
+
+// Output 1:
+// "10 glasses of water"
+
+// Explaination 1:
+// You drank ten standard drinks
+
+// Note:
+// To keep the things simple, we'll considere that any "numbered thing" in the string is a drink. 
+// Even "1 bear" => "1 glass of water" or "1 chainsaw and 2 pools" => "3 glasses of water"...
+
+const hydrate = (s, w = [...s].filter(x => !isNaN(x)).reduce((a, b) => a + +b, 0)) => `${w} glass${w === 1 ? '' : 'es'} of water`;
+
+
+// alternate
+function hydrate(s) {
+  let answer = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (parseInt(s[i]) > 0) {
+      answer += +s[i];
+    }
+  }
+  return answer > 1 ? `${answer} glasses of water`: '1 glass of water'
+}
+
+// alternate
+function hydrate(s) {
+
+  let res =s.match(/[0-9]/g)
+  let sum =0;
+ 
+  for (let  i =0; i<res.length; i++) {
+      sum +=+res[i];
+  }
+ 
+  let answer  = sum >1 ? sum + ' glasses of water' : sum + ' glass of water'
+      return answer;
+  }
