@@ -936,4 +936,53 @@ function hydrate(s) {
  
   let answer  = sum >1 ? sum + ' glasses of water' : sum + ' glass of water'
       return answer;
+}
+
+
+
+
+
+
+
+
+
+// What does names return after the following code runs?
+function deleteBlankNames(items){
+  for(var i = 0; i < items.length; i++){
+    if (items[i].length == 0){
+      items.splice(i, 1)
+    }
   }
+}
+var names = ['Rachel', '', 'Meghana', '', '', 'Tim']
+deleteBlankNames(names)
+// returns ['Rachel', 'Meghana', '', 'Tim']
+
+
+
+
+
+
+
+
+
+// what is the value of g after the code runs?
+
+function gen(start, range){
+  let x = start;
+  let direction = 1;
+  return function(){
+    x += direction;
+    if (Math.abs(x - start) >= range) direction *= -1;
+    return x
+  }
+}
+let f = gen(4, 5)
+f();
+f();
+f();
+f();
+f();
+f();
+let g = f();
+// returns 8 
