@@ -773,7 +773,7 @@ function DNAStrand(strand) {
   
     let compStrand = complementary.join("");
     return compStrand;
-  }
+}
   
   function getComp(nucleotide) {
     let compMapping = {

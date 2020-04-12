@@ -133,5 +133,17 @@ def quote(fighter)
 
 
 
-  
-/
+
+
+
+  # Complete the solution so that it reverses the string value passed into it.
+  # solution('world') # returns 'dlrow'
+  def reverse_string(str)
+    str.reverse
+  end
+
+
+  #alternate
+  def reverse_string(str)
+    str.reverse! #reverse! reverses a string in place
+  end
