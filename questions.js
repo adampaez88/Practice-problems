@@ -1064,3 +1064,31 @@ function validateCode (code) {
 
 // alternate
 const validateCode = code => /^[1-3]/g.test(code);
+
+
+
+
+
+
+
+
+
+
+// Task
+// Write a function named sumEvenNumbers, taking a sequence of numbers as single parameter. Your 
+// function must return the sum of the even values of this sequence.
+// Only numbers without decimals like 4 or 4.0 can be even.
+// Input
+// sequence of numbers: those numbers could be integers and/or floats.
+// For example, considering this input value : [4,3,1,2,5,10,6,7,9,8], then your function should 
+// return 30 (because 4 + 2 + 10 + 6 + 8 = 30).
+function sumEvenNumbers(input) {
+  return input.filter(function(el) {
+    return el % 2 == 0;
+  }).reduce(function(a, b) {
+    return a + b;
+  });
+}
+
+// alternate 
+const sumEvenNumbers = a => a.reduce((r, e) => r + (e % 2 ? 0 : e), 0);
