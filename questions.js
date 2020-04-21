@@ -1099,6 +1099,59 @@ const sumEvenNumbers = a => a.reduce((r, e) => r + (e % 2 ? 0 : e), 0);
 
 
 
+// This is a spin off of my first kata. You are given a list of character sequences 
+// as a comma separated string. Write a function which returns another string 
+// containing all the character sequences except the first and the last ones. 
+// If the input string is empty, or the removal of the first and last items would 
+// cause the string to be empty, return a null value.
+
+function array(arr){
+  return arr.split(",").slice(1,-1).join(" ") || null;
+}
+
+
+function array(arr){
+  var data = arr.split(',');
+  data.pop()
+  data.shift();
+  return data.length ? data.join(' ') : null;
+}
+
+
+const array = str => {
+  var arr = str.split(",");
+  return arr.length > 2 ? arr.slice(1,-1).join(" ") : null;
+}
+
+
+function array(arr){
+  arr = arr.split(',');
+  
+  if (arr.length < 3) {
+    return null;
+  }
+
+  return arr.slice(1, arr.length - 1).join(' ');
+}
+
+
+const array = word => {
+  let characters = word.split(',');
+  characters.shift();
+  characters.pop();
+  
+  return characters.length ? characters.join(' ') : null;
+}
+
+
+const array = arr => arr.split(',').slice(1,-1).join(' ') || null;
+
+
+
+
+
+
+
 
 
 
@@ -1120,3 +1173,27 @@ function squareArea(A){
 }
 
 
+
+
+
+// Write a function to convert a name into initials. This kata strictly takes 
+// two words with one space in between them.
+// The output should be two capital letters with a dot separating them.
+// It should look like this:
+// Sam Harris => S.H
+// Patrick Feeney => P.F
+
+function abbrevName(name){
+
+  var nameArray = name.split(" ");
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
+
+
+function abbrevName(name){
+  return name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.');
+}
+
+function abbrevName(name){
+  return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+}
