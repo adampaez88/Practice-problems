@@ -1197,3 +1197,23 @@ function abbrevName(name){
 function abbrevName(name){
   return name.split(' ').map(i => i[0].toUpperCase()).join('.')
 }
+
+
+
+
+
+
+
+
+
+// Debug function getSumOfDigits that takes positive 
+// integer to calculate sum of it's digits. 
+// Assume that argument is an integer.
+
+function getSumOfDigits(integer) {
+  return (integer+'').split('').reduce((sum, d) => sum + (+d || 0), 0);
+}
+
+getSumOfDigits = i => Math.abs(i).toString().split('').reduce((s, e) => s + +e, 0);
+
+
