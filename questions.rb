@@ -147,3 +147,36 @@ def quote(fighter)
   def reverse_string(str)
     str.reverse! #reverse! reverses a string in place
   end
+
+
+
+
+
+
+# As you may know, once some people pass their teens, they jokingly only 
+# celebrate their 20th or 21st birthday, forever. With some maths skills, 
+# that's totally possible - you only need to select the correct number base!
+# For example, if they turn 32, that's exactly 20 - in base 16... Already 39? 
+# That's just 21, in base 19!
+# Your task is to translate the given age to the much desired 20 (or 21) years, 
+# and indicate the number base, in the format specified below.
+# Note: input will be always > 21
+
+def womens_age(n)
+  "#{n}? That's just #{20 + n%2}, in base #{n/2}!"
+end
+
+
+def womens_age(n)
+  "#{n}? That's just #{n.even? ? 20 : 21}, in base #{n / 2}!"
+end
+
+def womens_age(n)  
+  "%d? That's just 2%d, in base %d!" % [ n, n-n/2*2, n/2 ]
+end
+
+def womens_age(n)
+  b = n/2
+  m = n%2 > 0 ? 21 : 20
+  "#{n}? That's just #{m}, in base #{b}!"
+end
