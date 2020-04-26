@@ -180,3 +180,102 @@ def womens_age(n)
   m = n%2 > 0 ? 21 : 20
   "#{n}? That's just #{m}, in base #{b}!"
 end
+
+
+
+
+
+
+
+
+
+
+# In the following 6 digit number:
+
+# 283910
+# 91 is the greatest sequence of 2 consecutive digits.
+
+# In the following 10 digit number:
+
+# 1234567890
+# 67890 is the greatest sequence of 5 consecutive digits.
+
+# Complete the solution so that it returns the greatest sequence of five 
+# consecutive digits found within the number given. The number will be passed 
+# in as a string of only digits. It should return a five digit integer. The 
+# number passed may be as large as 1000 digits.
+
+def solution(digits)
+  result = 0
+  digits.size.times do |n|
+    new_number = digits[n...(n + 5)].to_i
+    result = new_number if new_number > result
+  end
+  result
+end
+
+def solution(digits)
+  digits.chars.each_cons(5).max_by(&:itself).join.to_i
+end
+
+def solution(digits)
+  values = []
+  for i in 0...digits.length - 5
+    values.push digits.slice(i, 5).to_i
+  end
+  return values.max
+end
+
+def solution(digits)
+  arr = []
+  str = digits.to_s
+  (0..digits.size - 5).each do |i|
+    arr << str[i...i+5]
+  end
+  result = arr.max.to_i
+ end
+
+
+
+
+
+
+
+
+
+
+
+
+#  The function is not returning the correct values. Can you figure out why?
+# get_planet_name(3) # should return 'Earth'
+
+#broken code
+def get_planet_name(id)
+  # This doesn't work; Fix it!
+  name = ''
+  case id
+    when 1: name = "Mercury";
+    break;
+    when 2: name = "Venus";
+    break;
+    when 3: name = "Earth";
+    break;
+    when 4: name = "Mars";
+    break;
+    when 5: name = "Jupiter";
+    break;
+    when 6: name = "Saturn";
+    break;
+    when 7: name = "Uranus";
+    break;
+    else 8: name = "Neptune";
+    break;
+  end
+  return name
+end
+
+
+# solution
+ def get_planet_name(id)
+  %w[0 Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune][id]
+end
